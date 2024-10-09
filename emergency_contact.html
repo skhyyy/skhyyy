@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainPage.css">
+    <link rel="stylesheet" href="emergency_contact.css"> <!-- Link to the new CSS file -->
+    <title>Contact</title>
+</head>
+<body>
+    <div class="topnav">
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="Disaster_mainPage.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="top-right">
+            <a href="Disaster_mainPage.html">
+                <img src="IMG_3083.PNG" alt="Risk Vantage Logo" class="title-image">
+            </a>
+            <input type="text" placeholder="Search..">
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Emergency Contacts</h1>
+    </div>
+
+    <div class="contact-info">
+        <h1>Volcanology and Landslide</h1>
+        <h2>Philippine Institute of Volcanology and Seismology</h2>
+        <p>PHIVOLCS Building, C.P Garcia Ave., Diliman, Quezon City<br>
+        Philippines 1101</p>
+        <p>Trunkline: +632 8426-1468 up to 79<br>
+        Official mail: <a href="mailto:od@phivolcs.dost.gov.ph">od@phivolcs.dost.gov.ph</a> ; <a href="mailto:phivolcs_mail@phivolcs.dost.gov.ph">phivolcs_mail@phivolcs.dost.gov.ph</a></p>
+
+        <div class="division">
+            <h3>Seismological Observation & Earthquake Prediction Division (SOEPD)</h3>
+            <p>Direct line: (+63-2) 8 426- 1468 to 79, local 304<br>
+            Email: <a href="mailto:soepd@phivolcs.dost.gov.ph">soepd@phivolcs.dost.gov.ph</a></p>
+        </div>
+
+        <div class="division">
+            <h3>Volcano Monitoring and Eruption Prediction Division (VMEPD)</h3>
+            <p>Direct line: (+63-2) 8 426- 1468 to 79, local 310<br>
+            Email: <a href="mailto:mail.vmepd@phivolcs.dost.gov.ph">mail.vmepd@phivolcs.dost.gov.ph</a></p>
+        </div>
+
+        <div class="division">
+            <h3>Geology Geophysics Research & Development Division (GGRDD)</h3>
+            <p>Direct line: (+63-2) 8 426- 1468 to 79, local 206<br>
+            Email: <a href="mailto:ggrdd.mail@phivolcs.dost.gov.ph">ggrdd.mail@phivolcs.dost.gov.ph</a></p>
+        </div>
+
+        <div class="division">
+            <h3>Geologic Disaster Awareness & Preparedness Division (GDAPD)</h3>
+            <p>Direct line: (+63-2) 8 426- 1468 to 79, local 201<br>
+            Email: <a href="mailto:phivolcs_mail@phivolcs.dost.gov.ph">phivolcs_mail@phivolcs.dost.gov.ph</a></p>
+        </div>
+
+        <div class="division">
+            <h1>Typhoons, Cyclones and Floods</h1>
+            <h2>PAGASA Contact Information</h2>
+            <p>Science Garden Compound, Senator Miriam P. Defensor-Santiago Avenue, Barangay Central, Quezon City, Metro Manila, Philippines 1100</p>
+            <p>Trunk Line Number: (02) 8284-0800<br>
+            Connecting all offices at PAGASA Central Office Building, Weather and Flood Forecasting Center, and Climatology and Agrometeorology Division</p>
+
+            <h3>Local Hotlines</h3>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <h4>Public Information Unit</h4>
+                    <p>Direct Line: 89279308<br>Local: 1100</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Information Media Affairs Unit</h4>
+                    <p>Direct Line: 89256943<br>Local: 4865</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Weather Division</h4>
+                    <p>Direct Lines: 89272877, 89271335, 89264258<br>Local: 4801 / 4802</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hydro-Meteorology Division</h4>
+                    <p>Direct Lines: 89266970, 89294065, 89204052<br>Local: 4855</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Climatology and Agrometeorology Division</h4>
+                    <p>Direct Line: -<br>Local: 4906</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Astronomical Unit</h4>
+                    <p>Direct Line: -<br>Local: -</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="tips.html">Tips for Disaster</a>
+        <a href="emergency_contact.html">Emergency Contacts</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">Manage Account</a>
+        <a href="make_report.html">Make a Report</a>
+        <a href="login.html">Sign Up</a>
+        <a href="#" id="logoutButton">Sign Out</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

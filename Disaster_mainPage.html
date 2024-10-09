@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainPage.css">
+    <title>Main Page</title>
+    <style>
+        /* Positioning for the button */
+        .content-updater {
+            text-align: center;
+            position: absolute;
+            bottom: -8px;
+            padding: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 20px;
+
+        }
+
+        /* White cover for the message below the location */
+        .white-cover {
+            background-color: white;
+            padding: 0px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(3, 89, 201, 0.1);
+            max-width: 820px;
+            margin: 10px auto;
+            margin-top: 15px; 
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Button style */
+        #updateContentButton {
+            background-color: #fefefe;
+            color: #213A57;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        /* Dark Mode Button inside menu */
+        #darkModeToggle {
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        #darkModeToggle:hover {
+            background-color: #666;
+        }
+
+        /* Pop-up effect on hover */
+        #updateContentButton:hover {
+            transform: scale(1.1); /* Slightly enlarges the button */
+            background-color: #2f537c; /* Darken color */
+            color: #fefefe;
+        }
+
+        #messageContent {
+            font-size: 50px; /* Adjust the font size here */
+            font-weight: bolder; /* Optional */
+            color: #213A57; /* Optional */
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        /* Typing effect */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .typing {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid;
+            width: 20px;
+            animation: typing 2s steps(22) 1 normal forwards;
+            color: #fefefe;
+            font-weight: bolder;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 50px;
+        }
+
+        /* Background color transition */
+        .light-blue-background {
+            background-color: #2f537c;
+            transition: background-color 3s ease;
+        }
+    </style>
+</head>
+<body class="">
+    <div class="topnav">
+        <!-- Your top navigation here -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a class="active" href="#home">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="top-right">
+            <button id="updateContentButton">Update Content</button>
+
+            <a href="Disaster_mainPage.html">
+                <img src="IMG_3083.PNG" alt="Risk Vantage Logo" class="title-image">
+            </a>
+
+            <input type="text" placeholder="Search..">
+        </div>
+    </div>
+
+    <!-- Message section -->
+    <div class="white-cover" id="messageContainer">
+        <p id="messageContent">WELCOME TO RISK VANTAGE!</p>
+    </div>
+
+    <div class="header">
+        <p class="nameLoc" id="locationName">Name of Location</p>
+    </div>
+
+    <div class="content">
+        <div class="map-report">
+            <!-- Embed a Google Map here -->
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13231.54140984407!2d120.59820692530422!3d16.402312794098473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3393fc1e35e3ed43%3A0x95e9b004cb712cd!2sBaguio%20City%2C%20Philippines!5e0!3m2!1sen!2sus!4v1692441450155!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <div class="report" id="reportSection">
+                <p id="reportTitle">REPORT</p>
+                <p id="reportDescription">Description will appear here.</p>
+                <img id="reportImage" src="" alt="Report Image" style="display:none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Button update content -->
+    <div class="content-updater">
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <div id="userProfile" class="user-profile">
+            <p id="profileName">Username</p>
+        </div>
+        <a href="tips.html">Tips for Disasters</a>
+        <a href="emergency_contact.html">Emergency Contacts</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="make_report.html">Make a Report</a>
+        <a href="login.html">Sign In</a>
+        <a href="#" id="logoutButton">Sign Out</a>
+
+        <!-- Dark Mode Toggle inside the menu -->
+        <button id="darkModeToggle">Dark Mode</button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('show');
+        }
+
+        window.onload = function() {
+            const title = localStorage.getItem('reportTitle');
+            const description = localStorage.getItem('reportDescription');
+            const location = localStorage.getItem('reportLocation');
+            const image = localStorage.getItem('reportImage');
+
+            if (title && description && location) {
+                document.getElementById('reportTitle').textContent = title;
+                document.getElementById('reportDescription').textContent = description;
+                document.getElementById('locationName').textContent = location; // Update location name
+                if (image) {
+                    const img = document.getElementById('reportImage');
+                    img.src = image;
+                    img.style.display = 'block'; // Ensure image is visible
+                }
+            }
+
+            // Check if dark mode was enabled previously
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+            }
+        }
+
+        // Typing effect function to update message
+        function typeMessage(element, newText) {
+            element.textContent = ""; // Clear the text first
+            let typingEffect = document.createElement('span');
+            typingEffect.classList.add('typing');
+            typingEffect.textContent = newText;
+            element.appendChild(typingEffect); // Append the typing effect
+        }
+
+        document.getElementById('updateContentButton').addEventListener('click', function() {
+            const messageContainer = document.getElementById('messageContainer');
+            const messageContent = document.getElementById('messageContent');
+            
+            // Update text and apply typing effect
+            typeMessage(messageContent, "PRECISION MAPPING FOR A SAFER FUTURE");
+
+            // Change background color to light blue
+            messageContainer.classList.add('light-blue-background');
+        });
+
+        // Toggle dark mode on button click
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.removeItem('darkMode');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutButton = document.getElementById('logoutButton');
+            const userProfile = document.getElementById('userProfile');
+            const profileName = document.getElementById('profileName');
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const username = localStorage.getItem('username');
+
+            if (isLoggedIn) {
+                logoutButton.style.display = 'block';
+                userProfile.style.display = 'block';
+                profileName.textContent = username;
+            } else {
+                logoutButton.style.display = 'none';
+                userProfile.style.display = 'none';
+            }
+
+            logoutButton.addEventListener('click', function () {
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('username');
+                location.reload(); // Refresh the page to update the state
+            });
+        });
+    </script>
+</body>
+</html>

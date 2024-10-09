@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="makeReport.css">
+    <title>Make a Report</title>
+</head>
+<body>
+    <div class="topnav">
+        <!-- Your top navigation here -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="Disaster_mainPage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="top-right">
+            <a href="Disaster_mainPage.html">
+                <img src="IMG_3083.PNG" alt="Risk Vantage Logo" class="title-image">
+            </a>
+            <input type="text" placeholder="Search..">
+        </div>
+    </div>
+
+    <div class="content">
+        <form id="reportForm" class="report-form" enctype="multipart/form-data">
+            <h1>Submit a Report</h1>
+            <label for="title">Report Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Report Description:</label>
+            <textarea id="description" name="description" rows="6" required></textarea>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <button type="submit">Submit Report</button>
+        </form>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="tips.html">Tips for Disasters</a>
+        <a href="emergency_contact.html">Emergency Contacts</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="make_report.html">Make a Report</a>
+        <a href="login.html">Sign In</a>
+        <a href="#" id="logoutButton">Sign Out</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('show');
+        }
+
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const location = document.getElementById('location').value;
+            const image = document.getElementById('image').files[0];
+
+            // Create a FormData object
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('description', description);
+            formData.append('location', location);
+            if (image) {
+                formData.append('image', image);
+            }
+
+            // Save the report data (for example, save to local storage)
+            localStorage.setItem('reportTitle', title);
+            localStorage.setItem('reportDescription', description);
+            localStorage.setItem('reportLocation', location); // Save location
+            if (image) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem('reportImage', e.target.result);
+                };
+                reader.readAsDataURL(image);
+            }
+
+            // alert('Report submitted successfully!');
+            window.location.href = 'Disaster_mainPage.html'; // Redirect to the homepage
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,412 @@
+/* General Styles */
+body {
+    background-color: #213A57;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Contact Page Styles */
+.contact-info {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Light border for subtle separation */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto;
+    max-width: 800px; /* Limit width for readability */
+  }
+  
+  .contact-info h2 {
+    color: #213A57; /* Match the theme color */
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  .contact-info a {
+    color: #213A57; /* Link color matching theme */
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline; /* Underline on hover for better usability */
+  }
+  
+  .contact-info .division {
+    margin-bottom: 20px;
+  }
+  
+  .contact-info .division h3 {
+    color: #004a7c; /* Darker blue for subheadings */
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info .division p {
+    margin: 5px 0; /* Adjust margin for better spacing */
+  }
+  
+  .contact-info .division a {
+    color: #004a7c; /* Matching color for links in this section */
+  }
+  
+  .contact-info .division a:hover {
+    text-decoration: underline; /* Underline on hover for better usability */
+  }
+  
+  .contact-info .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between contact items */
+  }
+  
+  .contact-info .contact-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #ffffff;
+  }
+  
+  .contact-info .contact-item h4 {
+    color: #213A57; /* Matching theme color */
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info .contact-item p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the header section */
+    border-bottom: 10px solid #2f537c; /* Blue border to match the theme */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    color: #213A57; /* Matching theme color */
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .header p {
+    font-size: 18px;
+    color: #fefefe;
+    text-align: center;
+    margin: 10px 0 0 0;
+  }
+  
+.top-right {
+    display: flex;
+    align-items: center;
+  }
+  /* Top Navigation Styling */
+  .topnav {
+    display: flex;
+    align-items: center;
+    background-color: #fefefe; /* Darker blue for top navigation */
+    height: 70px;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    position: relative;
+    justify-content: space-between; /* Space between navigation links and right side items */
+  }
+  
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .hamburger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: #213A57;
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 15px; /* Space between navigation links */
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #213A57;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .nav-links a:hover {
+    background-color: #2f537c; /* Slightly darker blue for hover effect */
+  }
+  
+  .nav-links a.active {
+    background-color: #2f537c; /* Even darker blue for the active link */
+  }
+  
+  /* Top-right Container */
+  .top-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title {
+    margin-right: 20px; /* Space between title and search bar */
+    color: #213A57;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+/* Updated title-image styling */
+.title-image {
+  height: 150px; /* Adjust the height as needed */
+  max-height: 100%; /* Ensure the image stays within the nav height */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+  /* Search Bar */
+  .topnav input[type="text"] {
+    color: #fefefe;
+    padding: 8px;
+    border: none;
+    border-radius: 20px; /* Rounded corners for the search bar */
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .nameLoc {
+    background-color: #ffffff; /* White background for contrast */
+    border: 2px solid #79a3f1; /* Match the border color with the top navigation */
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    text-align: center;
+    color: #2f6bda; /* Matching text color */
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Content Container */
+  .content {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  /* Map and Report Styling */
+  .map-report {
+    display: flex;
+    gap: 20px; /* Space between map and report */
+  }
+  
+  /* Map Styling */
+  .map {
+    border: 3px solid #2f6bda; /* Blue border to match the theme */
+    border-radius: 10px;
+    padding: 5px;
+    width: 450px;
+    height: 600px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for better depth */
+  }
+  
+  .map iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Report Styling */
+  .report {
+    border: 3px solid #2f6bda; /* Matching border color */
+    border-radius: 10px;
+    padding: 15px; /* Padding inside the container to prevent text from touching the edges */
+    width: 500px;
+    height: 530px; /* Fixed height to enable scrolling */
+    text-align: center; /* Left-align text for better readability */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #ffffff; /* White background for the report */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    position: relative; /* Ensure proper positioning for the image */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  .report p {
+    margin: 0 0 10px 0; /* Remove top margin and add bottom margin */
+    overflow-wrap: break-word; /* Break long words to prevent horizontal overflow */
+  }
+  
+  .report img {
+    max-width: 100%; /* Ensure the image fits within the width of the container */
+    max-height: 300px; /* Limit height to ensure it doesn't cover text */
+    object-fit: contain; /* Preserve aspect ratio of the image */
+    border-radius: 8px; /* Match the rounded corners of the container */
+    margin-top: 10px; /* Add space above the image */
+    margin-bottom: 10px; /* Add space below the image */
+    display: block; /* Make the image a block element to center it */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+  
+  /* About Section with Background Image */
+  .about-section {
+    background-image: url('about_bg.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(101, 173, 221);
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Optional dark overlay for text readability */
+  .about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  /* Content within the About Section */
+  .about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    border-radius: 10px;
+  }
+  
+  .about-text h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px; /* Adjust based on topnav height */
+    left: 0;
+    width: 30%;
+    background-color: #fefefe;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .mobile-menu a {
+    display: block;
+    padding: 14px 16px;
+    color: #213A57;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .mobile-menu a:hover {
+    background-color: #213A57; /* Darker blue for hover effect */
+  }
+  
+  .mobile-menu.show {
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .topnav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0;
+    }
+  
+    .topnav input[type="text"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .map-report {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .map, .report {
+      width: 100%;
+      margin: 20px 0;
+    }
+  
+    .images {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hamburger-menu {
+      display: flex; /* Show hamburger menu on small screens */
+    }
+  
+    .about-section {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .about-text {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  

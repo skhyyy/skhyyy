@@ -1,0 +1,224 @@
+/* General Styles */
+body {
+    background-color: #213A57; /* Light background color for a clean look */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Top Navigation Styling */
+  .topnav {
+    display: flex;
+    align-items: center;
+    background-color: #fefefe; /* Darker blue for top navigation */
+    height: 70px;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    position: relative;
+    justify-content: space-between; /* Space between navigation links and right side items */
+  }
+  ::placeholder{
+    color: #fefefe;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .hamburger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: #213A57;
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 15px; /* Space between navigation links */
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #213A57;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .nav-links a:hover {
+    color: #fefefe;
+    background-color: #2f537c; /* Slightly darker blue for hover effect */
+  }
+  
+  .nav-links a.active {
+    background-color: #213A57; /* Even darker blue for the active link */
+  }
+  
+  /* Top-right Container */
+  .top-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title {
+    margin-right: 20px; /* Space between title and search bar */
+    color: #213A57;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+    
+  /* Updated title-image styling */
+  .title-image {
+    height: 150px; /* Adjust the height as needed */
+    max-height: 100%; /* Ensure the image stays within the nav height */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Search Bar */
+  .topnav input[type="text"] {
+    background-color: #213A57;
+    color: #fefefe;
+    padding: 8px;
+    border: none;
+    border-radius: 20px; /* Rounded corners for the search bar */
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .header h1 {
+    color: #213A57; /* Matching text color */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Content Container */
+  .content {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  /* Disaster List Styling */
+  .disaster-list {
+    width: 30%;
+    float: left;
+    color: #fefefe;
+  }
+  
+  .disaster-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .disaster-list li {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #fefefe;
+  }
+  
+  .disaster-list li:hover {
+    background-color: #2f537c; /* Lighter blue for hover effect */
+  }
+  
+  /* Disaster Tips Styling */
+  .disaster-tips {
+    width: 50%;
+    float: right;
+    background-color: #ffffff; /* White background for tips */
+    /*border: 3px solid #2f6bda; /* Matching border color */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px; /* Adjust based on topnav height */
+    left: 0;
+    width: 30%;
+    background-color: #fefefe;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .mobile-menu a {
+    display: block;
+    padding: 14px 16px;
+    color: #213A57;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .mobile-menu a:hover {
+    color: #fefefe;
+    background-color: #213A57; /* Darker blue for hover effect */
+  }
+  
+  .mobile-menu.show {
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .topnav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0;
+    }
+  
+    .topnav input[type="text"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .disaster-list, .disaster-tips {
+      width: 100%;
+      margin: 20px 0;
+    }
+  
+    .disaster-list {
+      float: none;
+    }
+  
+    .disaster-tips {
+      float: none;
+    }
+  
+    .hamburger-menu {
+      display: flex; /* Show hamburger menu on small screens */
+    }
+  }
+  

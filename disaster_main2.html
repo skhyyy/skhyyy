@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mainPage.css">
+    <title>Main Page</title>
+</head>
+<body>
+    <div class="topnav">
+        <!-- Your top navigation here -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a class="active" href="#home">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="top-right">
+            <a class="title" href="Disaster_mainPage.html">Risk Vantage</a>
+            <input type="text" placeholder="Search..">
+        </div>
+    </div>
+
+    <div class="header">
+        <p class="nameLoc" id="locationName">Name of Location</p>
+    </div>
+
+    <div class="content">
+        <div class="map-report">
+            <!-- Embed a Google Map here -->
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13231.54140984407!2d120.59820692530422!3d16.402312794098473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3393fc1e35e3ed43%3A0x95e9b004cb712cd!2sBaguio%20City%2C%20Philippines!5e0!3m2!1sen!2sus!4v1692441450155!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            
+            <div class="report" id="reportSection">
+                <p id="reportTitle">REPORT</p>
+                <p id="reportDescription">Description will appear here.</p>
+                <img id="reportImage" src="" alt="Report Image" style="display:none;">
+            </div>            
+        </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu">
+        <div id="userProfile" class="user-profile">
+            <p id="profileName">Username</p>
+        </div>
+        <a href="tips.html">Tips for Disasters</a>
+        <!-- <a href="login.html">Log In</a> -->
+        <a href="account_mng.html">Manage Account</a>
+        <a href="make_report.html">Make a Report</a>
+        <a href="#" id="logoutButton">Log Out</a>
+    </div>
+    
+    
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('show');
+        }
+
+        window.onload = function() {
+            const title = localStorage.getItem('reportTitle');
+            const description = localStorage.getItem('reportDescription');
+            const location = localStorage.getItem('reportLocation');
+            const image = localStorage.getItem('reportImage');
+
+            if (title && description && location) {
+                document.getElementById('reportTitle').textContent = title;
+                document.getElementById('reportDescription').textContent = description;
+                document.getElementById('locationName').textContent = location; // Update location name
+                if (image) {
+                    const img = document.getElementById('reportImage');
+                    img.src = image;
+                    img.style.display = 'block'; // Ensure image is visible
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+        const logoutButton = document.getElementById('logoutButton');
+        const userProfile = document.getElementById('userProfile');
+        const profileName = document.getElementById('profileName');
+
+        // Simulate user authentication
+        const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+        const username = localStorage.getItem('username');
+
+        if (isAuthenticated && username) {
+            // Show user profile if authenticated
+            userProfile.style.display = 'block';
+            profileName.textContent = username; // Display the username
+        } else {
+            // Hide user profile if not authenticated
+            userProfile.style.display = 'none';
+        }
+
+        logoutButton.addEventListener('click', function () {
+            // Remove authentication data
+            localStorage.removeItem('isAuthenticated');
+            localStorage.removeItem('username');
+
+            // Hide user profile
+            userProfile.style.display = 'none';
+
+            // Optionally, redirect to login page or refresh the page
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    });
+
+    </script>
+</body>
+</html>
+
+
+
+

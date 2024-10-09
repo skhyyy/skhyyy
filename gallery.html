@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Vantage Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+<body>
+    <div class="topnav">
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="Disaster_mainPage.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="top-right">
+            <a href="Disaster_mainPage.html">
+                <img src="IMG_3083.PNG" alt="Risk Vantage Logo" class="title-image">
+            </a>
+            <input type="text" placeholder="Search..">
+        </div>
+    </div>
+
+    <div class="gallery-header">
+        <h1>Risk Vantage Gallery</h1>
+    </div>
+    <!-- Image Container for RisK Vantage Gallery -->
+    <div class="gallery-container">
+        <div class="gallery-item" onclick="openSlideshow(0)">
+            <img src="gallery1.jpg" alt="Gallery Image 1">
+            <div class="gallery-title">Flooding at Baguio</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(1)">
+            <img src="gallery2.jpg" alt="Gallery Image 2">
+            <div class="gallery-title">Flooding at Banangan</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(2)">
+            <img src="gallery3.jpg" alt="Gallery Image 3">
+            <div class="gallery-title">Aftermath of Typhoon</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(3)">
+            <img src="gallery4.jpg" alt="Gallery Image 4">
+            <div class="gallery-title">Flooding at Monglo</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(4)">
+            <img src="gallery5.jpg" alt="Gallery Image 5">
+            <div class="gallery-title">Forest Fire</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(5)">
+            <img src="gallery6.jpg" alt="Gallery Image 6">
+            <div class="gallery-title">Aftermath of Typhoon </div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(6)">
+            <img src="gallery7.jpg" alt="Gallery Image 7">
+            <div class="gallery-title">Aftermath of House Fire</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(7)">
+            <img src="gallery8.jpg" alt="Gallery Image 8">
+            <div class="gallery-title">Disaster Wave</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(8)">
+            <img src="gallery9.jpg" alt="Gallery Image 9">
+            <div class="gallery-title">House Fire</div>
+        </div>
+        <div class="gallery-item" onclick="openSlideshow(9)">
+            <img src="gallery10.jpg" alt="Gallery Image 10">
+            <div class="gallery-title">Aftermath of Disaster</div>
+        </div>
+    </div>
+
+    <div id="slideshow" class="slideshow">
+        <span class="close" onclick="closeSlideshow()">&times;</span>
+        <img id="slideshow-image" src="" alt="Slideshow Image">
+        <div class="controls">
+            <button onclick="prevImage()">Previous</button>
+            <button onclick="nextImage()">Next</button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="tips.html">Tips for Disasters</a>
+        <a href="emergency_contact.html">Emergency Contacts</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="make_report.html">Make a Report</a>
+        <a href="login.html">Sign In</a>
+        <a href="#" id="logoutButton">Sign out</a>
+    </div>
+
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('show');
+        }
+        const images = ['gallery1.jpg', 'gallery2.jpg', 'gallery3.jpg', 'gallery4.jpg', 'gallery5.jpg', 'gallery6.jpg', 'gallery7.jpg', 'gallery8.jpg', 'gallery9.jpg', 'gallery10.jpg']; 
+        let currentIndex = 0;
+        // Display of Individually Pic
+        function openSlideshow(index) {
+            currentIndex = index;
+            document.getElementById('slideshow').style.display = 'flex';
+            showImage(currentIndex);
+        }
+
+        function closeSlideshow() {
+            document.getElementById('slideshow').style.display = 'none';
+        }
+
+        function showImage(index) {
+            const slideshowImage = document.getElementById('slideshow-image');
+            slideshowImage.src = images[index];
+        }
+        // Next and Previous Button
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+    </script>
+</body>
+</html>

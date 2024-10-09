@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tips.css">
+    <title>Tips for Disasters</title>
+</head>
+<body>
+    <div class="topnav">
+        <!-- Your top navigation here -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="Disaster_mainPage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="top-right">
+            <a href="Disaster_mainPage.html">
+                <img src="IMG_3083.PNG" alt="Risk Vantage Logo" class="title-image">
+            </a>
+            <input type="text" placeholder="Search..">
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Tips for Disasters</h1>
+    </div>
+
+    <div class="content">
+        <div class="disaster-list">
+            <h2>Disaster Types</h2>
+            <ul id="disasterList">
+                <li data-disaster="earthquake">Earthquake</li>
+                <li data-disaster="flood">Flood</li>
+                <li data-disaster="hurricane">Typhoon</li>
+                <li data-disaster="wildfire">Wildfire</li>
+                <li data-disaster="tsunami">Tsunami</li>
+                <li data-disaster="landslide">Landslide</li>
+                <li data-disaster="typhoon">Typhoon</li>
+                <li data-disaster="fire">Fire</li>
+            </ul>
+            
+        </div>
+        <div class="disaster-tips" id="disasterTips">
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="tips.html">Tips for Disasters</a>
+        <a href="emergency_contact.html">Emergency Contacts</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="make_report.html">Make a Report</a>
+        <a href="login.html">Sign In</a>
+        <a href="#" id="logoutButton">Sign Out</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('show');
+        }
+
+        const tips = {
+        earthquake: "During an earthquake, it's crucial to stay calm and follow safety protocols to protect yourself. If you’re indoors, immediately drop to your hands and knees, cover your head and neck, and seek shelter under a sturdy piece of furniture if possible. Avoid windows and heavy objects that could fall. If you’re outside, move away from buildings, streetlights, and power lines, and drop to the ground, covering your head and neck. While driving, pull over to a safe location away from overpasses and buildings, and remain in the vehicle with your seatbelt fastened until the shaking stops. After the earthquake, check for injuries and provide first aid if necessary, inspect your home for damage, and be prepared for possible aftershocks. Always follow official instructions and stay informed through local authorities to ensure your safety and recovery.",
+        flood: "If you are in a flood zone, immediately move to higher ground and stay there. Avoid walking or driving through flooded areas as water can be deeper and stronger than it appears, and it can sweep you away. Do not drive around barricades or through areas that are closed due to flooding. Floodwaters can contain dangerous debris and contaminants. If trapped in your vehicle, abandon it if water rises around it and seek higher ground. Stay tuned to weather updates and follow instructions from local authorities. After the flood, be cautious of potential hazards like damaged infrastructure, and avoid contact with floodwaters as they may be contaminated.",
+        hurricane: "Prepare an emergency kit with essentials such as water, non-perishable food, medications, and a flashlight. If instructed to evacuate, do so immediately and follow the recommended routes to avoid blocked or dangerous areas. If you cannot evacuate, stay indoors in a small, windowless room on the lowest floor of your home, away from exterior walls. Secure your home by boarding up windows and doors, and bringing in any outdoor furniture or decorations that could become projectiles. Listen to local advisories for updates on the storm and follow safety recommendations to protect yourself and your family.",
+        wildfire: "Create a defensible space around your home by clearing away flammable materials like leaves, wood, and propane tanks. Trim trees and bushes to create a buffer zone and ensure that your home is less vulnerable to flames. Have a well-thought-out evacuation plan that includes multiple routes out of your area, and make sure all family members are familiar with it. Pack essential items and protective clothing, such as long sleeves and masks, to avoid inhaling smoke. Stay updated on fire conditions and evacuation orders through local authorities. If instructed to evacuate, do so promptly to avoid being caught by the advancing fire.",
+        tsunami: "If you are in an area at risk for tsunamis, move to a higher elevation immediately if you feel a strong earthquake or hear a tsunami warning. Seek shelter in a small, windowless interior room on the lowest level of a sturdy building if you cannot evacuate. Avoid staying near the coast or seeking shelter under bridges or overpasses, as these areas can be dangerous during a tsunami. After the initial wave, be aware of potential additional waves that can follow. Follow local authorities' instructions and stay tuned to emergency alerts for guidance and updates on when it is safe to return to the affected areas.",
+        landslide: "Evacuate immediately if you hear rumbling sounds or see cracks in the ground. Stay away from steep slopes and riverbanks. After the landslide, stay away from the area until it's declared safe by authorities. Check for gas leaks and electrical hazards, and report any new or unusual movement of soil.",
+        typhoon: "Monitor weather forecasts and warnings. Prepare an emergency kit and plan for evacuation if necessary. Secure outdoor items and reinforce windows. During the typhoon, stay indoors and away from windows. Avoid using electrical appliances. After the typhoon, wait for authorities to declare the area safe before going outside. Avoid flooded areas and downed power lines.",
+        fire: "If a fire occurs, alert everyone in the home and evacuate immediately. Stay low to the ground to avoid smoke inhalation. Use the nearest exit; do not use elevators. After the fire, once outside, call 911 and do not go back inside until it is safe. Check for injuries and provide first aid if needed. Document damages for insurance claims and assess the safety of the building with professionals."
+    };
+
+    // Event listener to display tips based on the clicked disaster type
+    document.getElementById('disasterList').addEventListener('click', function(event) {
+        const disaster = event.target.getAttribute('data-disaster');
+        if (disaster) {
+            document.getElementById('disasterTips').textContent = tips[disaster];
+        }
+    });
+
+    </script>
+</body>
+</html>
